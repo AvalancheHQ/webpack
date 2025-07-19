@@ -1,11 +1,21 @@
-import { b as a1 } from 'externals0'
-import * as externals2NS from 'externals2'
+import { HomeLayout as aaa } from 'externals0';
 
-// Test namespace reexport
-export * as reexportedNS from 'externals2'
+const { HomeLayout = aaa } = {};
+console.log({ HomeLayout });
+{
+    const { HomeLayout = aaa } = {};
+    console.log({ HomeLayout });
+}
+(() => {
+    {
+        const { HomeLayout = aaa } = {};
+        console.log({ HomeLayout });
+    }
+})()
 
-// Test mixed reexports
-export { c, d } from 'externals0'
+{
+    const { external_externals3_namespaceObject = "111" } = {}
+            console.log({ external_externals3_namespaceObject });
+}
 
-a1;
-externals2NS.default;
+export { HomeLayout }
