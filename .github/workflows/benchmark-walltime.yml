@@ -18,7 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         shard: [1/4, 2/4, 3/4, 4/4]
-    runs-on: codspeed-macro
+    runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
@@ -45,6 +45,8 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y valgrind
           proto install node 20.5.1
+          curl -fsSL https://get.pnpm.io/install.sh | sh -
+          source /home/runner/.bashrc
           .github/workflows/scripts/codspeed-node-from-git.sh cod-1066-tinybench-nodejs-support-for-the-walltime-executor
       # End of added steps
       - name: Run benchmarks
@@ -52,6 +54,7 @@ jobs:
         with:
           run: yarn benchmark --ci
           token: ${{ secrets.CODSPEED_TOKEN }}
+          mode: walltime
         env:
           LAST_COMMIT: 1
           NEGATIVE_FILTER: on-schedule

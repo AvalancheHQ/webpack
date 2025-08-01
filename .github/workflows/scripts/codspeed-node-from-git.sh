@@ -19,10 +19,7 @@ fi
 
 # Install dependencies and build the packages
 pushd codspeed-node
-# install pnpm if not already installed
-if ! command -v pnpm &> /dev/null; then
-		npm install -g pnpm
-fi
+source /home/runner/.bashrc
 pnpm i
 sudo apt-get update
 sudo apt-get install -y valgrind
