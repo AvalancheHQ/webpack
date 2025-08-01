@@ -1,0 +1,58 @@
+name: CodSpeed Macro Webpack Benchmark
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  benchmark:
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1/4, 2/4, 3/4, 4/4]
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: "yarn"
+      - run: yarn --frozen-lockfile
+      - run: yarn link --frozen-lockfile || true
+      - run: yarn link webpack --frozen-lockfile
+
+      # Added steps to run codspeed-node from Git
+      - uses: moonrepo/setup-toolchain@v0
+        with:
+          auto-install: true
+      - name: Install codspeed-node from Git
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y valgrind
+          proto install node 20.5.1
+          .github/workflows/scripts/codspeed-node-from-git.sh cod-1066-tinybench-nodejs-support-for-the-walltime-executor
+      # End of added steps
+      - name: Run benchmarks
+        uses: CodSpeedHQ/action@v3
+        with:
+          run: yarn benchmark --ci
+          token: ${{ secrets.CODSPEED_TOKEN }}
+        env:
+          LAST_COMMIT: 1
+          NEGATIVE_FILTER: on-schedule
+          SHARD: ${{ matrix.shard }}
