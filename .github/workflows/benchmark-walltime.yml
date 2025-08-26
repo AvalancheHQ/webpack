@@ -37,9 +37,9 @@ jobs:
       - run: yarn link webpack --frozen-lockfile
 
       # Added steps to run codspeed-node from Git
-      - uses: moonrepo/setup-toolchain@v0
-        with:
-          auto-install: true
+      # - uses: moonrepo/setup-toolchain@v0
+      #   with:
+      #     auto-install: true
       - name: Install codspeed-node from Git
         run: |
           sudo apt-get update
