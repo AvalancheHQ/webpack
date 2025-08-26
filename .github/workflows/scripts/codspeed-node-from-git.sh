@@ -32,9 +32,4 @@ popd
 
 popd
 
-# Install the built package
-yarn remove @codspeed/core
-yarn add --dev link:../codspeed-node/packages/core
-# remove the strings "workspace:" with empty string in tinybench-plugin package.json to avoid dep issues
-sed -i 's/workspace://g' codspeed-node/packages/tinybench-plugin/package.json
-yarn add --dev link:../codspeed-node/packages/tinybench-plugin
+# Install the built package is done later with the correct node version

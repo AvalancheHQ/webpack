@@ -48,6 +48,15 @@ jobs:
         with:
           node-version: lts/*
           cache: "yarn"
+
+      - run: |
+          yarn remove @codspeed/core
+          yarn add --dev link:../codspeed-node/packages/core
+          # remove the strings "workspace:" with empty string in tinybench-plugin package.json to avoid dep issues
+          sed -i 's/workspace://g' ../codspeed-node/packages/tinybench-plugin/package.json
+          yarn add --dev link:../codspeed-node/packages/tinybench-plugin
+
+
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
