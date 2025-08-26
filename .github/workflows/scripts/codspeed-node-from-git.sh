@@ -23,9 +23,9 @@ fi
 pushd codspeed-node
 source /home/runner/.bashrc
 corepack enable pnpm
-pnpm i
 sudo apt-get update
 sudo apt-get install -y valgrind
+pnpm i
 pnpm moon run :build
 sudo apt remove -y valgrind
 popd

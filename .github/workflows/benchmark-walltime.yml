@@ -42,9 +42,6 @@ jobs:
       #     auto-install: true
       - name: Install codspeed-node from Git
         run: |
-          sudo apt-get update
-          sudo apt-get install -y valgrind
-          proto install node 20.5.1
           .github/workflows/scripts/codspeed-node-from-git.sh main
       # End of added steps
       - name: Run benchmarks
