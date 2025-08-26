@@ -36,14 +36,18 @@ jobs:
       - run: yarn link --frozen-lockfile || true
       - run: yarn link webpack --frozen-lockfile
 
-      # Added steps to run codspeed-node from Git
-      # - uses: moonrepo/setup-toolchain@v0
-      #   with:
-      #     auto-install: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20.5.1
       - name: Install codspeed-node from Git
         run: |
           .github/workflows/scripts/codspeed-node-from-git.sh main
       # End of added steps
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: "yarn"
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
