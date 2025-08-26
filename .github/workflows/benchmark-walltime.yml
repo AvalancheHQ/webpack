@@ -36,8 +36,6 @@ jobs:
       - run: yarn link --frozen-lockfile || true
       - run: yarn link webpack --frozen-lockfile
 
-      - uses: pnpm/action-setup@v4
-
       # Added steps to run codspeed-node from Git
       - uses: moonrepo/setup-toolchain@v0
         with:

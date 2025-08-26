@@ -22,6 +22,7 @@ fi
 # Install dependencies and build the packages
 pushd codspeed-node
 source /home/runner/.bashrc
+corepack enable pnpm
 pnpm i
 sudo apt-get update
 sudo apt-get install -y valgrind
