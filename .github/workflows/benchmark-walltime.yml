@@ -36,6 +36,8 @@ jobs:
       - run: yarn link --frozen-lockfile || true
       - run: yarn link webpack --frozen-lockfile
 
+      - uses: pnpm/action-setup@v4
+
       # Added steps to run codspeed-node from Git
       - uses: moonrepo/setup-toolchain@v0
         with:
@@ -45,9 +47,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y valgrind
           proto install node 20.5.1
-          curl -fsSL https://get.pnpm.io/install.sh | sh -
-          source /home/runner/.bashrc
-          .github/workflows/scripts/codspeed-node-from-git.sh cod-1066-tinybench-nodejs-support-for-the-walltime-executor
+          .github/workflows/scripts/codspeed-node-from-git.sh main
       # End of added steps
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3

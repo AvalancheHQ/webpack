@@ -6,6 +6,8 @@ set -ex
 
 BRANCH=$1
 
+pushd ..
+
 # Clone the repo if it doesn't exist or update it if it does
 if [ ! -d "codspeed-node" ]; then
     git clone -b "$BRANCH" https://github.com/CodSpeedHQ/codspeed-node.git
@@ -27,9 +29,11 @@ pnpm moon run :build
 sudo apt remove -y valgrind
 popd
 
+popd
+
 # Install the built package
 yarn remove @codspeed/core
-yarn add --dev link:codspeed-node/packages/core
+yarn add --dev link:../codspeed-node/packages/core
 # remove the strings "workspace:" with empty string in tinybench-plugin package.json to avoid dep issues
 sed -i 's/workspace://g' codspeed-node/packages/tinybench-plugin/package.json
-yarn add --dev link:codspeed-node/packages/tinybench-plugin
+yarn add --dev link:../codspeed-node/packages/tinybench-plugin
