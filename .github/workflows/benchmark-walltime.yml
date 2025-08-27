@@ -36,27 +36,6 @@ jobs:
       - run: yarn link --frozen-lockfile || true
       - run: yarn link webpack --frozen-lockfile
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20.5.1
-      - name: Install codspeed-node from Git
-        run: |
-          .github/workflows/scripts/codspeed-node-from-git.sh main
-      # End of added steps
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-          cache: "yarn"
-
-      - run: |
-          yarn remove @codspeed/core
-          yarn add --dev link:../codspeed-node/packages/core
-          # remove the strings "workspace:" with empty string in tinybench-plugin package.json to avoid dep issues
-          sed -i 's/workspace://g' ../codspeed-node/packages/tinybench-plugin/package.json
-          yarn add --dev link:../codspeed-node/packages/tinybench-plugin
-
-
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
