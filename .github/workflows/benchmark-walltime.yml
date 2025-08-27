@@ -18,7 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         shard: [1/4, 2/4, 3/4, 4/4]
-    runs-on: ubuntu-latest
+    runs-on: codspeed-macro
     permissions:
       issues: write
       pull-requests: write
@@ -36,19 +36,6 @@ jobs:
       - run: yarn link --frozen-lockfile || true
       - run: yarn link webpack --frozen-lockfile
 
-      - uses: pnpm/action-setup@v4
-
-      # Added steps to run codspeed-node from Git
-      - uses: moonrepo/setup-toolchain@v0
-        with:
-          auto-install: true
-      - name: Install codspeed-node from Git
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y valgrind
-          proto install node 20.5.1
-          .github/workflows/scripts/codspeed-node-from-git.sh main
-      # End of added steps
       - name: Run benchmarks
         uses: CodSpeedHQ/action@v3
         with:
