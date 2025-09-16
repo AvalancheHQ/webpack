@@ -10,12 +10,13 @@ pushd ..
 
 # Clone the repo if it doesn't exist or update it if it does
 if [ ! -d "codspeed-node" ]; then
-    git clone -b "$BRANCH" https://github.com/CodSpeedHQ/codspeed-node.git
+    git clone --recurse-submodules -b "$BRANCH" https://github.com/CodSpeedHQ/codspeed-node.git
 else
     pushd codspeed-node
     git fetch origin "$BRANCH"
     git checkout "$BRANCH"
     git pull
+		git submodule update --init --recursive
     popd
 fi
 
