@@ -81,7 +81,6 @@
     ]
   },
   "dependencies": {
-    "@codspeed/tinybench-plugin": "5.0.0-alpha.0",
     "@types/eslint-scope": "^3.7.7",
     "@types/estree": "^1.0.8",
     "@types/json-schema": "^7.0.15",
@@ -111,7 +110,8 @@
   "devDependencies": {
     "@babel/core": "^7.27.1",
     "@babel/preset-react": "^7.27.1",
-    "@codspeed/core": "5.0.0-alpha.0",
+    "@codspeed/core": "5.0.0-alpha.5",
+    "@codspeed/tinybench-plugin": "5.0.0-alpha.5",
     "@eslint/js": "^9.29.0",
     "@eslint/markdown": "^7.1.0",
     "@stylistic/eslint-plugin": "^5.2.2",

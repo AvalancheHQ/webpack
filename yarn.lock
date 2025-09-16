@@ -340,22 +340,22 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@codspeed/core@5.0.0-alpha.0", "@codspeed/core@^5.0.0-alpha.0":
-  version "5.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@codspeed/core/-/core-5.0.0-alpha.0.tgz#0e9ad843b2669b5f0a975824d6402e020a759a78"
-  integrity sha512-I2y7qEho3lcwpzbn3sbULeuXsBtrmq1Mm4LBROzLaA0H8uTd+jZyD9X+ZPiULDSEZ87HOvonWadhYwKlEedH7g==
+"@codspeed/core@5.0.0-alpha.5", "@codspeed/core@^5.0.0-alpha.5":
+  version "5.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@codspeed/core/-/core-5.0.0-alpha.5.tgz#cbbc3a0f2adf3b271cfc19be821a33e1b8c8b2bc"
+  integrity sha512-6baTn4IimTjRng3hEwg8a5V6V5fkdUCzHioDE0+xNkKbmuaFdr583oOxGIbLMKtfNVDGyXZckoPT6qplGkOVPw==
   dependencies:
     axios "^1.4.0"
     find-up "^6.3.0"
     form-data "^4.0.4"
     node-gyp-build "^4.6.0"
 
-"@codspeed/tinybench-plugin@5.0.0-alpha.0":
-  version "5.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@codspeed/tinybench-plugin/-/tinybench-plugin-5.0.0-alpha.0.tgz#75bd2aed7460c115bfcfd7a650ffe5bf90e58a73"
-  integrity sha512-zFKkPw+NQ/bNxfYVrnEMyWRr481nVjI0/PWu04fB4oN39g4t9QZJvCMKDZWK6Y8XdE5UNYFHhlPAw6NtvKaJEg==
+"@codspeed/tinybench-plugin@5.0.0-alpha.5":
+  version "5.0.0-alpha.5"
+  resolved "https://registry.yarnpkg.com/@codspeed/tinybench-plugin/-/tinybench-plugin-5.0.0-alpha.5.tgz#51b36231f53b2dfed7d828c6ee485cb81fcd398b"
+  integrity sha512-0rXXP6TVo96j1HeMkSeylYmmJ/zoKYUu1ofBQk/tPjCdf6mOqf71jlhozNg310pUxkBgAHbkZOrHLa0VInkrHg==
   dependencies:
-    "@codspeed/core" "^5.0.0-alpha.0"
+    "@codspeed/core" "^5.0.0-alpha.5"
     stack-trace "1.0.0-pre2"
 
 "@cspell/cspell-bundled-dicts@9.1.3":
@@ -2124,9 +2124,9 @@ available-typed-arrays@^1.0.7:
     possible-typed-array-names "^1.0.0"
 
 axios@^1.4.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.11.0.tgz#c2ec219e35e414c025b2095e8b8280278478fdb6"
-  integrity sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==
+  version "1.12.2"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.12.2.tgz#6c307390136cf7a2278d09cec63b136dfc6e6da7"
+  integrity sha512-vMJzPewAlRyOgxV2dU0Cuz2O8zzzx9VYtbJOaBgXFeLc4IV/Eg50n4LowmehOOR61S8ZMpc2K5Sa7g6A4jfkUw==
   dependencies:
     follow-redirects "^1.15.6"
     form-data "^4.0.4"
@@ -3813,9 +3813,9 @@ flatted@^3.2.9, flatted@^3.3.1:
   integrity sha512-GX+ysw4PBCz0PzosHDepZGANEuFCMLrnRTiEy9McGjmkCQYwRq4A/X786G/fjM/+OjsWSU1ZrY5qyARZmO/uwg==
 
 follow-redirects@^1.15.6:
-  version "1.15.9"
-  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.9.tgz#a604fa10e443bf98ca94228d9eebcc2e8a2c8ee1"
-  integrity sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==
+  version "1.15.11"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.11.tgz#777d73d72a92f8ec4d2e410eb47352a56b8e8340"
+  integrity sha512-deG2P0JfjrTxl50XGCDyfI97ZGVCxIpfKYmfyrQ54n5FO/0gfIES8C/Psl6kWVDolizcaaxZJnTS0QSMxvnsBQ==
 
 for-each@^0.3.3, for-each@^0.3.5:
   version "0.3.5"
